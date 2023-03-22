@@ -32,7 +32,6 @@ int main(int argc, char **argv) {
 
     // 欧拉角: 可以将旋转矩阵直接转换成欧拉角
     /** 这一步三制定顺规 */
-
     cout << "rotation_matrix = " << rotation_matrix << endl;
     Eigen::Vector3d euler_angles = rotation_matrix.eulerAngles(2, 1, 0); // ZYX顺序，即roll pitch yaw顺序
 

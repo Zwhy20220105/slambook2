@@ -60,3 +60,7 @@ int main(int argc, char **argv) {
 
   return 0;
 }
+
+
+
+\dot{\boldsymbol{R}}(t) \boldsymbol{R}(t)^{\mathrm{T}}=-\left(\dot{\boldsymbol{R}}(t) \boldsymbol{R}(t)^{\mathrm{T}}\right)^{\mathrm{T}}

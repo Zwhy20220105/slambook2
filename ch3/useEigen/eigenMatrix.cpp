@@ -59,7 +59,7 @@ int main( int argc, char** argv )
 
     // 同样你不能搞错矩阵的维度
     // 试着取消下面的注释，看看Eigen会报什么错
-    Eigen::Matrix<double, 2, 3> result_wrong_dimension = matrix_23.cast<double>() * v_3d;
+    //Eigen::Matrix<double, 2, 3> result_wrong_dimension = matrix_23.cast<double>() * v_3d;
 
     // 一些矩阵运算
     // 四则运算就不演示了，直接用+-*/即可。
