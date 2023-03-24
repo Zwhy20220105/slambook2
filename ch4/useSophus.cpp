@@ -15,10 +15,12 @@ int main(int argc, char **argv) {
 
   // 沿Z轴转90度的旋转矩阵
   Matrix3d R = AngleAxisd(M_PI / 2, Vector3d(0, 0, 1)).toRotationMatrix();
+
   // 或者四元数
   Quaterniond q(R);
-  Sophus::SO3d SO3_R(R);              // Sophus::SO3d可以直接从旋转矩阵构造
+  Sophus::SO3d SO3_R(R);                    // Sophus::SO3d可以直接从旋转矩阵构造
   Sophus::SO3d SO3_q(q);              // 也可以通过四元数构造
+
   // 二者是等价的
   cout << "SO(3) from matrix:\n" << SO3_R.matrix() << endl;
   cout << "SO(3) from quaternion:\n" << SO3_q.matrix() << endl;
@@ -36,10 +38,10 @@ int main(int argc, char **argv) {
   Vector3d update_so3(1e-4, 0, 0); //假设更新量为这么多
   Sophus::SO3d SO3_updated = Sophus::SO3d::exp(update_so3) * SO3_R;
   cout << "SO3 updated = \n" << SO3_updated.matrix() << endl;
-
   cout << "*******************************" << endl;
   // 对SE(3)操作大同小异
   Vector3d t(1, 0, 0);           // 沿X轴平移1
+
   Sophus::SE3d SE3_Rt(R, t);           // 从R,t构造SE(3)
   Sophus::SE3d SE3_qt(q, t);            // 从q,t构造SE(3)
   cout << "SE3 from R,t= \n" << SE3_Rt.matrix() << endl;
