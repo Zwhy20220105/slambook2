@@ -4,6 +4,8 @@
 #include <Eigen/Geometry>
 #include "sophus/se3.hpp"
 
+#define FMT_HEADER_ONLY
+
 using namespace std;
 using namespace Eigen;
 
@@ -61,6 +63,3 @@ int main(int argc, char **argv) {
   return 0;
 }
 
-
-
-\dot{\boldsymbol{R}}(t) \boldsymbol{R}(t)^{\mathrm{T}}=-\left(\dot{\boldsymbol{R}}(t) \boldsymbol{R}(t)^{\mathrm{T}}\right)^{\mathrm{T}}
